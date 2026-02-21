@@ -1,0 +1,12 @@
+# ONE Astrology Content Engine Dependencies
+# Install with: pip install -r requirements.txt
+
+# Google Gemini AI
+google-generativeai>=0.8.0
+
+# Automation
+playwright>=1.40.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.0.0

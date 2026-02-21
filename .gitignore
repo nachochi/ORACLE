@@ -1,0 +1,26 @@
+# Secrets — never commit
+gateway.env
+*.env
+.env*
+**/secrets/
+**/.secrets/
+
+# Large data files
+BOOKSHELF_TEXT_ALL.txt
+BOOKSHELF_TEXT_FILES.txt
+BOOKSHELF_INVENTORY.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Logs
+*.log
+/tmp/
+
+# OS
+.DS_Store
+Thumbs.db

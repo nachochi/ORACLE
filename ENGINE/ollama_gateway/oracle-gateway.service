@@ -1,0 +1,25 @@
+[Unit]
+Description=ORACLE Ollama Gateway (Auth Proxy)
+After=network-online.target ollama.service
+Wants=ollama.service
+
+[Service]
+Type=simple
+User=nachochi
+WorkingDirectory=/home/nachochi/ORACLE/ENGINE/ollama_gateway
+ExecStart=/usr/bin/python3 /home/nachochi/ORACLE/ENGINE/ollama_gateway/gateway.py
+EnvironmentFile=/home/nachochi/ORACLE/ENGINE/ollama_gateway/gateway.env
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=oracle-gateway
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/home/nachochi/ORACLE/ENGINE/ollama_gateway
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
