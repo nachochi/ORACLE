@@ -2,11 +2,20 @@
 > **The canonical source of truth. Clone this repo on any machine and you are fully operational.**
 
 ```
-Last Updated : 2026-02-20
+Last Updated : 2026-02-21
 GitHub       : https://github.com/nachochi/ORACLE
 Owner        : nachochi
-Sessions     : [Session 1](031f1a62-571d-4f05-a22b-08f2063bb01e)
 ```
+
+---
+
+## START HERE (next session)
+
+- **Dashboard:** `http://localhost:8765` (run `python3 -m src.main` from MASTER_TRADER if down)
+- **Ollama gateway:** `http://localhost:11435` (systemd: `ollama` + `oracle-gateway`)
+- **n8n:** `http://localhost:5678` — 5 workflows live (health, BTC alert, daily brief, GitHub deploy, disk)
+- **Negative compute:** `MASTER_TRADER/oracle_mind/negative_compute.py` — inversion-first response (cast into mold). Use `invert(msg)` then Ollama on miss; call `store(msg, response)` to grow the cavity library.
+- **Do this first:** Wire direct ORACLE chat (dashboard route or tiny Flask/FastAPI) that calls `negative_compute.respond(msg)` so you talk to ORACLE without Cursor. Then add ONE Inc. n8n workflows (content trigger, LVLS) and hook them to JJ if you want the toroidal bus for ONE.
 
 ---
 
